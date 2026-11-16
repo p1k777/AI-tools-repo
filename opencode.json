@@ -13,40 +13,22 @@
                 "openai/gpt-5": {
                     "name": "openai/gpt-5"
                 },
-                "anthropic/claude-sonnet-4": {
-                    "name": "anthropic/claude-sonnet-4"
+                "anthropic/claude-sonnet-5": {
+                    "name": "anthropic/claude-sonnet-5"
                 }
             }
-        }
-    },
-    "skills": {
-        "paths": [
-            ".opencode/skills",
-            "practices/practice_04/.opencode/skills"
-        ]
-    },
-    "mcp": {
-        "git": {
-            "type": "local",
-            "command": [
-                "npx",
-                "-y",
-                "git-mcp-server"
-            ],
-            "enabled": true,
-            "environment": {}
         },
-        "taskhub": {
-            "type": "local",
-            "command": [
-                "practices/practice_04/.venv/bin/python",
-                "practices/practice_04/mcp/server.py"
-            ],
-            "enabled": true,
-            "environment": {}
+        "freellmapi": {
+             "npm": "@ai-sdk/openai-compatible",
+            "name": "FreeLLMAPI",
+            "options": {
+                "baseURL": "http://localhost:31415/v1"
+            },
+            "models": {
+            "auto": {
+                 "name": "Auto (FreeLLMAPI)"
+            }
         }
-    },
-    "experimental": {
-        "mcp_timeout": 30000
+    }
     }
 }
