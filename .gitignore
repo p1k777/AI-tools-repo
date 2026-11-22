@@ -71,3 +71,14 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Node/Client artifacts
+client/node_modules/
+client/test-results/
+client/playwright-report/
+
+# Vite cache under client
+client/node_modules/.vite/
+
+# Local env files
+/.env
