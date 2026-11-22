@@ -2,16 +2,15 @@
 // Functions: sum, average, clamp
 
 export function sum(nums: number[]): number {
-  // BUG: reduce without initial value throws on empty arrays
-  // and can lead to unexpected behavior.
-  return nums.reduce((a, b) => a + b);
+  // Fix: provide initial value to handle empty arrays safely.
+  return nums.reduce((a, b) => a + b, 0);
 }
 
 export function average(nums: number[]): number | null {
-  // BUG: For empty arrays this returns NaN instead of null.
-  // Also relies on sum() behavior above.
+  // Fix: for empty arrays return null explicitly.
+  if (nums.length === 0) return null;
   const total = sum(nums);
-  return total / nums.length || null;
+  return total / nums.length;
 }
 
 export function clamp(value: number, min: number, max: number): number {

@@ -4,13 +4,12 @@ import { sum, average, clamp } from './calc';
 describe('calc demo (buggy initially)', () => {
   it('sum adds numbers and handles empty array (should be 0)', () => {
     expect(sum([1, 2, 3])).toBe(6);
-    // This currently throws, desired behavior is to return 0
-    expect(() => sum([])).toThrow();
+    // Previously threw; now should return 0 for empty input
+    expect(sum([])).toBe(0);
   });
 
   it('average returns mean or null for empty list', () => {
     expect(average([2, 4, 6])).toBe(4);
-    // Currently returns NaN, desired is null
     expect(average([])).toBeNull();
   });
 
